@@ -1,0 +1,207 @@
+@import "palette";
+@import "fonts";
+
+$header-size: 60px;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $Lora;
+	font-size: 12pt;
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+}
+
+.logo {
+	background: url("../img/flower.png") center;
+	background-size: contain;
+	width: 50px;
+	height: 50px;
+}
+
+// Header
+header {
+	position: fixed;
+	z-index: 2;
+	background-color: #fff;
+	border-bottom: 1px #eee solid;
+
+	margin: 0;
+	padding: 0 5vw;
+
+	width: 100%;
+	height: $header-size;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.site-title {
+		font-size: 1em;
+		color: #666;
+	}
+
+	.logo {
+		width: 50px;
+		z-index: 3;
+	}
+
+	nav {
+		// TODO: add hamburger menu, and make normal in tablet
+		ul {
+			display: flex;
+			justify-content: start;
+
+			padding: 0;
+			margin: 0;
+			list-style: None;
+
+			li {
+				padding-left: 1em;
+				a {
+					font-size: 0.8em;
+					color: #666;
+				}
+			}
+		}
+	}
+}
+
+main {
+	// pseudo header underneath for spacing
+	&:before {
+		content: "";
+		height: $header-size;
+		width: 100vw;
+		margin-top: 5vw;
+		position: absolute;
+		z-index: 1;
+		background: #fff;
+	}
+
+	padding: 5vw;
+	margin: 0;
+	overflow-y: scroll;
+	height: 100vh;
+
+	position: absolute;
+	display: grid;
+	justify-items: center;
+
+	section {
+		padding: 5vw;
+	}
+
+	.hero {
+		width: 100%;
+		height: calc(100vh - 60px - 10vw);
+		margin: $header-size 0 0 0;
+		padding: 0;
+		background: url("../img/hero.png") bottom no-repeat #fafafa;
+		background-size: contain;
+		color: #666;
+
+		.hero-heading {
+			position: absolute;
+			z-index: 3;
+
+			color: #ddd;
+
+			display: none;
+			grid-template-columns: 1fr 5fr 1fr;
+			column-gap: 1em;
+			justify-content: space-between;
+			align-items: center;
+
+			hr {
+				color: #ddd;
+			}
+		}
+
+		.hero-content {
+			position: relative;
+			margin: auto;
+			background: #fafafaee;
+			padding: 20% 10% 0% 10%;
+			text-align: center;
+			display: grid;
+
+			h1 {
+				font-family: $Mont;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				font-size: 2em;
+				margin: 0;
+			}
+
+			p {
+				font-style: Italic;
+				font-size: 0.7em;
+				margin: 0;
+				padding: 0.5em 1em;
+			}
+
+			a.button {
+				margin: 1em auto 0 auto;
+				width: max-content;
+				display: inline-block;
+				padding: 0.5em 1em;
+				border: 0.1em solid #ffffff;
+				border-radius: 1.5em;
+				box-sizing: border-box;
+				text-decoration: none;
+				font-family: $Mont;
+				font-size: 0.8em;
+				font-weight: 300;
+				background-color: #888;
+				color: #ffffff;
+				text-align: center;
+				transition: all 0.5s;
+
+				&:hover {
+					color: #888;
+					background-color: #fafafa;
+					border: 0.1em solid #888;
+				}
+			}
+		}
+	}
+}
+
+// tablet size
+@media only screen and (min-width: 600px) {
+	.logo {
+		position: absolute;
+		left: calc(50% - 25px);
+		top: 25px;
+	}
+
+	main {
+		.hero {
+			background-image: none;
+			width: 100%;
+			height: calc(100vh - 60px - 10vw);
+			margin: $header-size 0 0 0;
+			padding: 0;
+			color: #666;
+			position: relative;
+			display: flex;
+
+			.hero-content {
+				&:before {
+					content: "";
+					background: url("../img/hero.png") top no-repeat;
+					background-size: contain;
+					min-width: 100px;
+					min-height: 100px;
+					display: block;
+				}
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+}
