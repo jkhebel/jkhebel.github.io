@@ -17,6 +17,9 @@ body {
   background-size: contain;
   width: 50px;
   height: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: 25px;
 }
 
 header {
@@ -34,6 +37,7 @@ header {
 }
 header .site-title {
   font-size: 1em;
+  font-weight: bold;
   color: #666;
 }
 header .logo {
@@ -56,70 +60,59 @@ header nav ul li a {
 }
 
 main {
-  padding: 5vw;
+  padding: 0 5vw;
   margin: 0;
+  margin-top: 60px;
   overflow-y: scroll;
-  height: 100vh;
+  width: 100vw;
   position: absolute;
   display: grid;
   justify-items: center;
-}
-main:before {
-  content: "";
-  height: 60px;
-  width: 100vw;
-  margin-top: 5vw;
-  position: absolute;
-  z-index: 1;
-  background: #fff;
+  row-gap: 0;
+  column-gap: 0;
 }
 main section {
-  padding: 5vw;
+  border-top: #ddd solid;
+  width: 640px;
+  padding-top: 24pt;
+  margin-top: 24pt;
+}
+main section h1 {
+  font-variant: all-small-caps;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.25em;
+  color: #888;
+  margin-top: -35pt;
+  text-align: center;
 }
 main .hero {
-  width: 100%;
-  height: calc(100vh - 60px - 10vw);
-  margin: 60px 0 0 0;
+  width: 320px;
+  height: 320px;
   padding: 0;
-  background: url("../img/hero.png") bottom no-repeat #fafafa;
+  background: url("../img/hero.png") bottom no-repeat #ffffff;
   background-size: contain;
-  color: #666;
+  border: none;
 }
-main .hero .hero-heading {
-  position: absolute;
-  z-index: 3;
-  color: #ddd;
-  display: none;
-  grid-template-columns: 1fr 5fr 1fr;
-  column-gap: 1em;
-  justify-content: space-between;
-  align-items: center;
-}
-main .hero .hero-heading hr {
-  color: #ddd;
-}
-main .hero .hero-content {
-  position: relative;
-  margin: auto;
-  background: #fafafaee;
-  padding: 20% 10% 0% 10%;
-  text-align: center;
+main .tag-line {
   display: grid;
+  justify-items: center;
+  color: #333;
 }
-main .hero .hero-content h1 {
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  font-size: 2em;
-  margin: 0;
+main .tag-line #s1, main .tag-line #s2 {
+  font-size: 1.8em;
 }
-main .hero .hero-content p {
-  font-style: Italic;
-  font-size: 0.7em;
-  margin: 0;
-  padding: 0.5em 1em;
+main .tag-line #s3 {
+  font-size: 1.2em;
+  font-style: italic;
+  padding: 0.3em 0;
 }
-main .hero .hero-content a.button {
+main .tag-line #line {
+  width: 15vw;
+  border-top: #ddd solid;
+  margin-top: 0.5em;
+}
+main .tag-line a.button {
   margin: 1em auto 0 auto;
   width: max-content;
   display: inline-block;
@@ -130,47 +123,25 @@ main .hero .hero-content a.button {
   text-decoration: none;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 0.8em;
-  font-weight: 300;
+  font-weight: bold;
   background-color: #888;
   color: #ffffff;
   text-align: center;
   transition: all 0.5s;
 }
-main .hero .hero-content a.button:hover {
+main .tag-line a.button:hover {
   color: #888;
   background-color: #fafafa;
   border: 0.1em solid #888;
 }
-
-@media only screen and (min-width: 600px) {
-  .logo {
-    position: absolute;
-    left: calc(50% - 25px);
-    top: 25px;
-  }
-
-  main .hero {
-    background-image: none;
-    width: 100%;
-    height: calc(100vh - 60px - 10vw);
-    margin: 60px 0 0 0;
-    padding: 0;
-    color: #666;
-    position: relative;
-    display: flex;
-  }
-  main .hero .hero-content {
-    text-align: center;
-    display: block;
-  }
-  main .hero .hero-content:before {
-    content: "";
-    background: url("../img/hero.png") top no-repeat;
-    background-size: contain;
-    min-width: 100px;
-    min-height: 100px;
-    display: block;
-  }
+main .profile-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+}
+main .profile-images img {
+  border: 1px solid #333;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
