@@ -70,6 +70,10 @@ header {
 					font-size: 0.8em;
 					color: #666;
 				}
+				a:hover {
+					// text-decoration: underline;
+					color: #aaa;
+				}
 			}
 		}
 	}
@@ -89,9 +93,10 @@ main {
 	row-gap: 0;
 	column-gap: 0;
 
-	section {
+	> section {
 		border-top: #ddd solid;
-		width: 640px;
+		width: 65vw;
+		max-width: 800px;
 		padding-top: $section-spacing;
 		margin-top: $section-spacing;
 
@@ -106,37 +111,7 @@ main {
 		}
 	}
 
-	.hero {
-		width: 320px;
-		height: 320px;
-		padding: 0;
-		background: url("../img/hero.png") bottom no-repeat #ffffff;
-		background-size: contain;
-		border: none;
-
-	}
-
-	.tag-line {
-		display: grid;
-		justify-items: center;
-		color: #333;
-
-		#s1, #s2 {
-			font-size: 1.8em;
-		}
-		#s3 {
-			font-size: 1.2em;
-			font-style: italic;
-			padding: 0.3em 0;
-		}
-
-		#line {
-			width: 15vw;
-			border-top: #ddd solid;
-			margin-top: 0.5em;
-		}
-
-		a.button {
+	a.button {
 			margin: 1em auto 0 auto;
 			width: max-content;
 			display: inline-block;
@@ -160,6 +135,39 @@ main {
 			}
 		}
 
+	.hero {
+		width: 40vw;
+		height: 40vw;
+		max-width: 500px;
+		max-height: 500px;
+		padding: 0;
+		background: url("../img/hero.png") bottom no-repeat #ffffff;
+		background-size: contain;
+		border: none;
+
+	}
+
+	.tag-line {
+		display: grid;
+		justify-items: center;
+		color: #333;
+		text-align: center;
+
+		#s1, #s2 {
+			font-size: 2em;
+		}
+		#s3 {
+			font-size: 1.2em;
+			font-style: italic;
+			padding: 0.3em 0;
+		}
+
+		#line {
+			width: 15vw;
+			border-top: #ddd solid;
+			margin-top: 0.5em;
+		}
+
 	}
 
 	.profile-images {
@@ -169,6 +177,55 @@ main {
 		img {
 			border: 1px solid #333;
 			width: 100%;
+		}
+	}
+
+	.mission-statement {
+		h2 {
+			color: #333333;
+			font: $Lora;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 1.8em;
+			text-align: center;
+		}
+	}
+
+	.featured-work  {
+		#featured-work-grid {
+			display: grid;
+			justify-content: center;
+			grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+			gap: 20px;
+
+			font: $Lora;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 0.8rem;
+			color: #333;
+			text-align: center;
+
+			h2 {
+				font-weight: bold;
+				font-style: normal;
+				font-size: 1.3rem;
+				font-variant: all-small-caps;
+				padding: 0px;
+				margin: 0px;
+			}
+
+			img {
+				object-fit: cover;
+				aspect-ratio: 1/1;
+				width: 100%;
+			}
+
+			a {
+				text-decoration: underline;
+			}
+			a:hover {
+				color:#aaa;
+			}
 		}
 	}
 }

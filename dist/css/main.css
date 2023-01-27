@@ -58,6 +58,9 @@ header nav ul li a {
   font-size: 0.8em;
   color: #666;
 }
+header nav ul li a:hover {
+  color: #aaa;
+}
 
 main {
   padding: 0 5vw;
@@ -71,13 +74,14 @@ main {
   row-gap: 0;
   column-gap: 0;
 }
-main section {
+main > section {
   border-top: #ddd solid;
-  width: 640px;
+  width: 65vw;
+  max-width: 800px;
   padding-top: 24pt;
   margin-top: 24pt;
 }
-main section h1 {
+main > section h1 {
   font-variant: all-small-caps;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 1.2em;
@@ -86,33 +90,7 @@ main section h1 {
   margin-top: -35pt;
   text-align: center;
 }
-main .hero {
-  width: 320px;
-  height: 320px;
-  padding: 0;
-  background: url("../img/hero.png") bottom no-repeat #ffffff;
-  background-size: contain;
-  border: none;
-}
-main .tag-line {
-  display: grid;
-  justify-items: center;
-  color: #333;
-}
-main .tag-line #s1, main .tag-line #s2 {
-  font-size: 1.8em;
-}
-main .tag-line #s3 {
-  font-size: 1.2em;
-  font-style: italic;
-  padding: 0.3em 0;
-}
-main .tag-line #line {
-  width: 15vw;
-  border-top: #ddd solid;
-  margin-top: 0.5em;
-}
-main .tag-line a.button {
+main a.button {
   margin: 1em auto 0 auto;
   width: max-content;
   display: inline-block;
@@ -129,10 +107,39 @@ main .tag-line a.button {
   text-align: center;
   transition: all 0.5s;
 }
-main .tag-line a.button:hover {
+main a.button:hover {
   color: #888;
   background-color: #fafafa;
   border: 0.1em solid #888;
+}
+main .hero {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 0;
+  background: url("../img/hero.png") bottom no-repeat #ffffff;
+  background-size: contain;
+  border: none;
+}
+main .tag-line {
+  display: grid;
+  justify-items: center;
+  color: #333;
+  text-align: center;
+}
+main .tag-line #s1, main .tag-line #s2 {
+  font-size: 2em;
+}
+main .tag-line #s3 {
+  font-size: 1.2em;
+  font-style: italic;
+  padding: 0.3em 0;
+}
+main .tag-line #line {
+  width: 15vw;
+  border-top: #ddd solid;
+  margin-top: 0.5em;
 }
 main .profile-images {
   display: grid;
@@ -142,6 +149,45 @@ main .profile-images {
 main .profile-images img {
   border: 1px solid #333;
   width: 100%;
+}
+main .mission-statement h2 {
+  color: #333333;
+  font: Lora, Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.8em;
+  text-align: center;
+}
+main .featured-work #featured-work-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  font: Lora, Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+}
+main .featured-work #featured-work-grid h2 {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.3rem;
+  font-variant: all-small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+main .featured-work #featured-work-grid img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+main .featured-work #featured-work-grid a {
+  text-decoration: underline;
+}
+main .featured-work #featured-work-grid a:hover {
+  color: #aaa;
 }
 
 /*# sourceMappingURL=main.css.map */
