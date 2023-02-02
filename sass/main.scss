@@ -2,6 +2,7 @@
 @import "fonts";
 
 $header-size: 60px;
+$section-spacing: 24pt;
 
 * {
 	box-sizing: border-box;
@@ -20,6 +21,9 @@ body {
 	background-size: contain;
 	width: 50px;
 	height: 50px;
+	position: absolute;
+	left: calc(50% - 25px);
+	top: 25px;
 }
 
 // Header
@@ -41,12 +45,14 @@ header {
 
 	.site-title {
 		font-size: 1em;
+		font-weight: bold;
 		color: #666;
 	}
 
 	.logo {
 		width: 50px;
 		z-index: 3;
+		float: right;
 	}
 
 	nav {
@@ -65,143 +71,224 @@ header {
 					font-size: 0.8em;
 					color: #666;
 				}
+				a:hover {
+					// text-decoration: underline;
+					color: #aaa;
+				}
 			}
 		}
 	}
 }
 
 main {
-	// pseudo header underneath for spacing
-	&:before {
-		content: "";
-		height: $header-size;
-		width: 100vw;
-		margin-top: 5vw;
-		position: absolute;
-		z-index: 1;
-		background: #fff;
-	}
 
-	padding: 5vw;
+	padding: 0 5vw 5vh 5vw;
 	margin: 0;
+	margin-top: $header-size;
 	overflow-y: scroll;
-	height: 100vh;
+	width: 100vw;
 
 	position: absolute;
 	display: grid;
 	justify-items: center;
+	row-gap: 0;
+	column-gap: 0;
 
-	section {
-		padding: 5vw;
+	> section {
+		border-top: #ddd solid;
+		width: 65vw;
+		max-width: 800px;
+		padding-top: $section-spacing;
+		margin-top: $section-spacing;
+		display: grid;
+		justify-items: center;
+
+		h1 {
+			font-variant: all-small-caps;
+			font-family: $Mont;
+			font-size: 1.2em;
+			letter-spacing: 0.25em;
+			color: #888;
+			background-color: #fff;
+			margin-top: - $section-spacing - 11pt;
+			text-align: center;
+			padding: 0 10px;
+		}
 	}
 
-	.hero {
-		width: 100%;
-		height: calc(100vh - 60px - 10vw);
-		margin: $header-size 0 0 0;
-		padding: 0;
-		background: url("../img/hero.png") bottom no-repeat #fafafa;
-		background-size: contain;
-		color: #666;
+	a.button {
+			margin: 1em auto 0 auto;
+			width: max-content;
+			display: inline-block;
+			padding: 0.5em 1em;
+			border: 0.1em solid #ffffff;
+			border-radius: 1.5em;
+			box-sizing: border-box;
+			text-decoration: none;
+			font-family: $Mont;
+			font-size: 0.8em;
+			font-weight: bold;
+			background-color: #888;
+			color: #ffffff;
+			text-align: center;
+			transition: all 0.5s;
 
-		.hero-heading {
-			position: absolute;
-			z-index: 3;
-
-			color: #ddd;
-
-			display: none;
-			grid-template-columns: 1fr 5fr 1fr;
-			column-gap: 1em;
-			justify-content: space-between;
-			align-items: center;
-
-			hr {
-				color: #ddd;
+			&:hover {
+				color: #888;
+				background-color: #fafafa;
+				border: 0.1em solid #888;
 			}
 		}
 
-		.hero-content {
-			position: relative;
-			margin: auto;
-			background: #fafafaee;
-			padding: 20% 10% 0% 10%;
+	.hero {
+		width: 40vw;
+		height: 40vw;
+		max-width: 500px;
+		max-height: 500px;
+		padding: 0;
+		background: url("../img/hero.png") bottom no-repeat #ffffff;
+		background-size: contain;
+		border: none;
+
+	}
+
+	.tag-line {
+		color: #333;
+		text-align: center;
+
+		#s1, #s2 {
+			font-size: 2em;
+		}
+		#s3 {
+			font-size: 1.2em;
+			font-style: italic;
+			padding: 0.3em 0;
+		}
+
+		#line {
+			width: 15vw;
+			border-top: #ddd solid;
+			margin-top: 0.5em;
+		}
+
+	}
+
+	.profile-images {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 16px;
+		img {
+			border: 1px solid #333;
+			width: 100%;
+		}
+	}
+
+	.mission-statement {
+		span {
+			color: #333333;
+			font: $Lora;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 1.6rem;
 			text-align: center;
+
+			#generalist {
+				// font-variant: all-small-caps;
+				font-style: normal;
+				font-weight: bolder;
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.featured-work  {
+		#featured-work-grid {
 			display: grid;
+			justify-content: center;
+			grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+			gap: 0px;
 
-			h1 {
-				font-family: $Mont;
+			font: $Lora;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 0.8rem;
+			color: #333;
+			text-align: center;
+
+			section {
+				padding:20px
+			}
+
+			section:hover {
+				background-color: darken(#fff, 5%);
+			}
+
+			h2 {
 				font-weight: bold;
-				letter-spacing: 0.1em;
-				font-size: 2em;
-				margin: 0;
+				font-style: normal;
+				font-size: 1.3rem;
+				font-variant: all-small-caps;
+				padding: 0px;
+				margin: 0px;
 			}
 
-			p {
-				font-style: Italic;
-				font-size: 0.7em;
-				margin: 0;
-				padding: 0.5em 1em;
+			img {
+				object-fit: cover;
+				aspect-ratio: 1/1;
+				width: 100%;
 			}
 
-			a.button {
-				margin: 1em auto 0 auto;
-				width: max-content;
-				display: inline-block;
-				padding: 0.5em 1em;
-				border: 0.1em solid #ffffff;
-				border-radius: 1.5em;
-				box-sizing: border-box;
-				text-decoration: none;
-				font-family: $Mont;
-				font-size: 0.8em;
-				font-weight: 300;
-				background-color: #888;
-				color: #ffffff;
-				text-align: center;
-				transition: all 0.5s;
-
-				&:hover {
-					color: #888;
-					background-color: #fafafa;
-					border: 0.1em solid #888;
-				}
+			a {
+				text-decoration: underline;
 			}
+			a:hover {
+				color:#aaa;
+			}
+		}
+	}
+
+	.footer {
+		p {
+			text-align: center;
+		}
+		a {
+			color: #333;
 		}
 	}
 }
 
 // tablet size
-@media only screen and (min-width: 600px) {
-	.logo {
-		position: absolute;
-		left: calc(50% - 25px);
-		top: 25px;
-	}
+// @media only screen and (min-width: 700px) {
+// 	.logo {
+// 		position: absolute;
+// 		left: calc(50% - 25px);
+// 		top: 25px;
+// 	}
+// }
 
-	main {
-		.hero {
-			background-image: none;
-			width: 100%;
-			height: calc(100vh - 60px - 10vw);
-			margin: $header-size 0 0 0;
-			padding: 0;
-			color: #666;
-			position: relative;
-			display: flex;
+// 	main {
+// 		.hero {
+// 			background-image: none;
+// 			width: 100%;
+// 			height: calc(100vh - 60px - 10vw);
+// 			margin: $header-size 0 0 0;
+// 			padding: 0;
+// 			color: #666;
+// 			position: relative;
+// 			display: flex;
 
-			.hero-content {
-				&:before {
-					content: "";
-					background: url("../img/hero.png") top no-repeat;
-					background-size: contain;
-					min-width: 100px;
-					min-height: 100px;
-					display: block;
-				}
-				text-align: center;
-				display: block;
-			}
-		}
-	}
-}
+// 			.hero-content {
+// 				&:before {
+// 					content: "";
+// 					background: url("../img/hero.png") top no-repeat;
+// 					background-size: contain;
+// 					min-width: 100px;
+// 					min-height: 100px;
+// 					display: block;
+// 				}
+// 				text-align: center;
+// 				display: block;
+// 			}
+// 		}
+// 	}
+// }

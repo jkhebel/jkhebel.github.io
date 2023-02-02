@@ -1,55 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
-  <title>Portfolio</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
 
-  <header>
-    <span class="site-title">made <em>of</em>. <strong>ink</strong></span>
-    <div class="logo"></div>
-    <nav>
-      <ul>
-        <li><a>About Me</a></li>
-        <li><a>Portfolio</a></li>
-        <li><a>Blog</a></li>
-      </ul>
+    <header>
+      <span class="site-title"><a>Jai K. Hebel</a></span>
+      <div class="logo"></div>
+      <nav>
+        <ul>
+          <li><a>About Me</a></li>
+          <li><a>AI</a></li>
+          <li><a>Biomedical</a></li>
+          <li><a>Software</a></li>
+          <li><a>Portfolio</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- TODO: add panel for social favicons -->
 
-    </nav>
-  </header>
+    <main>
 
-  <main>
+      <section class="hero">
+      </section>
 
-    <section class="hero">
-      <div class="hero-heading"><h3>heading</h3><hr width=100%/></div>
-      <div class="hero-content">
-        <h1>
-          Collected Works
-        </h1>
-        <p>Portfolio of a <span class="rotate">generalist</span>.</p>
+      <section class="tag-line">
+        <h1>Profile</h1>
+        <span id="s1"><em>I am </em><strong>Jai Hebel</strong>, M.Eng</span>
+        <span id="s2">Biological & Biomedical Engineering</span>
+        <span id="s3">Artist. Engineer. Scientist.</span>
+        <span id="line"></span>
+        <a class="button">Learn More</a>
+      </section>
 
-        <a class=button> See More</a>
-        <a href="#" class="twitter"></a>
-        <a href="#" class="github"></a>
-        <a href="" class="linkedn"></a>
-      </div>
+      <section class="profile-images">
+        <img src="../dist/img/headshot.jpeg" />
+        <img src="../dist/img/mountain.jpg" />
+      </section>
 
+      <section class="mission-statement">
+        <h1>Mission</h1>
+        <span>As a <span id="generalist">generalist</span> I seek to pursue both domain-specific expertise and broad understanding in order to connect new ideas for deeper understanding.</span>
+      </section>
 
-    </section>
+      <section class="featured-work">
+        <h1>Featured Work</h1>
+        <section id="featured-work-grid">
+          <section>
+            <img src="../dist/img/bts.png"/>
+            <h2>Machine Learning</h2>
+            Through my work as a biological imaging specialist, I've deployed a wide range of <a>CNNs, VAEs, and other computer vision solutions for MR, microscopy, and hyperspectral image analysis.</a>
+          </section>
+          <section>
+            <img src="../dist/img/proprionoise.jpg"/>
+            <h2>Biomedical Science</h2>
+            Culminating in my Masters in Biological & Biomedical Engineering, I've spent my academic career producing projects for <a>biomedical device design and thesis research into brain tumour resection.</a>
+          </section>
+          <section>
+            <img src="../dist/img/github.png"/>
+            <h2>Software Engineering</h2>
+            My professional projects in software engineering have ranged across <a>full-stack, mobile app development, data engineering, and analysis pipelines in python.</a>
+          </section>
+        </section>
+      </section>
 
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum nihil voluptatibus vitae unde exercitationem harum, debitis sunt velit quia ipsa a praesentium itaque sequi in incidunt iure dignissimos voluptatem sit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur nesciunt quaerat ratione, ipsam voluptatem eum odit earum officiis id reprehenderit atque itaque cumque quod quae dolorum at minus, dignissimos a?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga a qui cupiditate maxime deserunt voluptatem pariatur, eos, velit illum nemo porro sapiente animi facere magnam. Provident repudiandae optio itaque eligendi.</p>
-    </section>
+      <section class="footer">
+        <h1>Contact Me</h1>
+        <p>
+          If you're curious how I made this site, be sure to check out my <a href="https://github.com/jkhebel/portfolio">code repository</a> I have shared on github. Don't hesitate to <a href="mailto:jaihebel@gmail.com">get in touch</a> or follow me on one of my socials.
+        </p>
+      </section>
 
-  </main>
+    </main>
 
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

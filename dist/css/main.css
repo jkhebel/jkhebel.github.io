@@ -17,6 +17,9 @@ body {
   background-size: contain;
   width: 50px;
   height: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: 25px;
 }
 
 header {
@@ -34,11 +37,13 @@ header {
 }
 header .site-title {
   font-size: 1em;
+  font-weight: bold;
   color: #666;
 }
 header .logo {
   width: 50px;
   z-index: 3;
+  float: right;
 }
 header nav ul {
   display: flex;
@@ -54,72 +59,43 @@ header nav ul li a {
   font-size: 0.8em;
   color: #666;
 }
+header nav ul li a:hover {
+  color: #aaa;
+}
 
 main {
-  padding: 5vw;
+  padding: 0 5vw 5vh 5vw;
   margin: 0;
+  margin-top: 60px;
   overflow-y: scroll;
-  height: 100vh;
+  width: 100vw;
   position: absolute;
   display: grid;
   justify-items: center;
+  row-gap: 0;
+  column-gap: 0;
 }
-main:before {
-  content: "";
-  height: 60px;
-  width: 100vw;
-  margin-top: 5vw;
-  position: absolute;
-  z-index: 1;
-  background: #fff;
-}
-main section {
-  padding: 5vw;
-}
-main .hero {
-  width: 100%;
-  height: calc(100vh - 60px - 10vw);
-  margin: 60px 0 0 0;
-  padding: 0;
-  background: url("../img/hero.png") bottom no-repeat #fafafa;
-  background-size: contain;
-  color: #666;
-}
-main .hero .hero-heading {
-  position: absolute;
-  z-index: 3;
-  color: #ddd;
-  display: none;
-  grid-template-columns: 1fr 5fr 1fr;
-  column-gap: 1em;
-  justify-content: space-between;
-  align-items: center;
-}
-main .hero .hero-heading hr {
-  color: #ddd;
-}
-main .hero .hero-content {
-  position: relative;
-  margin: auto;
-  background: #fafafaee;
-  padding: 20% 10% 0% 10%;
-  text-align: center;
+main > section {
+  border-top: #ddd solid;
+  width: 65vw;
+  max-width: 800px;
+  padding-top: 24pt;
+  margin-top: 24pt;
   display: grid;
+  justify-items: center;
 }
-main .hero .hero-content h1 {
+main > section h1 {
+  font-variant: all-small-caps;
   font-family: Montserrat, Arial, sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  font-size: 2em;
-  margin: 0;
+  font-size: 1.2em;
+  letter-spacing: 0.25em;
+  color: #888;
+  background-color: #fff;
+  margin-top: -35pt;
+  text-align: center;
+  padding: 0 10px;
 }
-main .hero .hero-content p {
-  font-style: Italic;
-  font-size: 0.7em;
-  margin: 0;
-  padding: 0.5em 1em;
-}
-main .hero .hero-content a.button {
+main a.button {
   margin: 1em auto 0 auto;
   width: max-content;
   display: inline-block;
@@ -130,47 +106,108 @@ main .hero .hero-content a.button {
   text-decoration: none;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 0.8em;
-  font-weight: 300;
+  font-weight: bold;
   background-color: #888;
   color: #ffffff;
   text-align: center;
   transition: all 0.5s;
 }
-main .hero .hero-content a.button:hover {
+main a.button:hover {
   color: #888;
   background-color: #fafafa;
   border: 0.1em solid #888;
 }
-
-@media only screen and (min-width: 600px) {
-  .logo {
-    position: absolute;
-    left: calc(50% - 25px);
-    top: 25px;
-  }
-
-  main .hero {
-    background-image: none;
-    width: 100%;
-    height: calc(100vh - 60px - 10vw);
-    margin: 60px 0 0 0;
-    padding: 0;
-    color: #666;
-    position: relative;
-    display: flex;
-  }
-  main .hero .hero-content {
-    text-align: center;
-    display: block;
-  }
-  main .hero .hero-content:before {
-    content: "";
-    background: url("../img/hero.png") top no-repeat;
-    background-size: contain;
-    min-width: 100px;
-    min-height: 100px;
-    display: block;
-  }
+main .hero {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 0;
+  background: url("../img/hero.png") bottom no-repeat #ffffff;
+  background-size: contain;
+  border: none;
+}
+main .tag-line {
+  color: #333;
+  text-align: center;
+}
+main .tag-line #s1, main .tag-line #s2 {
+  font-size: 2em;
+}
+main .tag-line #s3 {
+  font-size: 1.2em;
+  font-style: italic;
+  padding: 0.3em 0;
+}
+main .tag-line #line {
+  width: 15vw;
+  border-top: #ddd solid;
+  margin-top: 0.5em;
+}
+main .profile-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+}
+main .profile-images img {
+  border: 1px solid #333;
+  width: 100%;
+}
+main .mission-statement span {
+  color: #333333;
+  font: Lora, Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: center;
+}
+main .mission-statement span #generalist {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+main .featured-work #featured-work-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0px;
+  font: Lora, Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+}
+main .featured-work #featured-work-grid section {
+  padding: 20px;
+}
+main .featured-work #featured-work-grid section:hover {
+  background-color: #f2f2f2;
+}
+main .featured-work #featured-work-grid h2 {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.3rem;
+  font-variant: all-small-caps;
+  padding: 0px;
+  margin: 0px;
+}
+main .featured-work #featured-work-grid img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+main .featured-work #featured-work-grid a {
+  text-decoration: underline;
+}
+main .featured-work #featured-work-grid a:hover {
+  color: #aaa;
+}
+main .footer p {
+  text-align: center;
+}
+main .footer a {
+  color: #333;
 }
 
 /*# sourceMappingURL=main.css.map */
