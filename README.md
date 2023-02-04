@@ -5,7 +5,10 @@ This repo house the code for my personal web portfolio housed at [jaihebel.com](
 The current deployment method uses [Github Pages](https://pages.github.com/), which hosts the content of the `gh-pages` deployment branch. To push the contents of the *distribution* folder to the deployment branch, use the `git subtree` command below to push a target folder to a separate branch:
 
 ```
-git subtree push --prefix dist origin gh-pages
+git switch main
+git subtree split --prefix dist --branch gh-pages
+git switch gh-pages
+git push
 ```
 
 ## Future development
