@@ -161,10 +161,10 @@ main .mission-statement span {
   font-size: 1.6rem;
   text-align: center;
 }
-main .mission-statement span #generalist {
-  font-style: normal;
+main .mission-statement span #specialist {
+  font-variant: all-small-caps;
   font-weight: bolder;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 main .featured-work #featured-work-grid {
   display: grid;
