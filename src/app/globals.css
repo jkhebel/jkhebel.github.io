@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background, #ffffff);
+    color: var(--color-text, #202124);
+    font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif, 'Lora', Georgia, serif);
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-600 to-accent-800 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply rounded-lg shadow-sm border p-6 hover:shadow-md transition-all duration-200;
+    background: linear-gradient(135deg, var(--color-primary-50, #ffffff) 0%, var(--color-primary-100, #f9fafb) 100%);
+    border-color: var(--color-primary-200, #e5e7eb);
+    color: var(--color-text, #202124);
+    backdrop-filter: blur(10px);
+  }
+
+      .btn-primary {
+    @apply font-medium py-2 px-4 rounded-lg transition-all duration-200;
+    background: linear-gradient(135deg, var(--color-accent-600, #2196f3) 0%, var(--color-accent-700, #1976d2) 100%);
+    color: var(--color-primary-50, #ffffff);
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-700, #1976d2) 0%, var(--color-accent-800, #1565c0) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+    .btn-secondary {
+    @apply font-medium py-2 px-4 rounded-lg transition-all duration-200;
+    background: linear-gradient(135deg, var(--color-primary-100, #f3f4f6) 0%, var(--color-primary-200, #e5e7eb) 100%);
+    color: var(--color-text, #202124);
+    border: 1px solid var(--color-primary-300, #d1d5db);
+  }
+
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, var(--color-primary-200, #e5e7eb) 0%, var(--color-primary-300, #d1d5db) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+    .tag {
+    @apply inline-block text-sm px-3 py-1 rounded-full mr-2 mb-2 transition-all duration-200;
+    background: linear-gradient(135deg, var(--color-primary-100, #f3f4f6) 0%, var(--color-primary-150, #e5e7eb) 100%);
+    color: var(--color-text, #202124);
+    border: 1px solid var(--color-primary-200, #e5e7eb);
+  }
+
+  .tag:hover {
+    background: linear-gradient(135deg, var(--color-accent-100, #e3f2fd) 0%, var(--color-accent-200, #bbdefb) 100%);
+    border-color: var(--color-accent-400, #42a5f5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
